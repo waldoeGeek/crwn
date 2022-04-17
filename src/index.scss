@@ -1,5 +1,6 @@
 html {
-  font-size: 62.5%;
+  // font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -14,4 +15,10 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 }
