@@ -42,8 +42,8 @@
   }
 
   .category-body-container {
-    height: 90px;
-    padding: 0 25px;
+    height: 9.5em;
+    padding: 2em 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,14 +55,20 @@
 
     h2 {
       font-weight: bold;
+      text-transform: uppercase;
       margin: 0 6px 0;
       font-size: 22px;
       color: #4a4a4a;
+      font-family: 'Bebas Neue';
+      font-size: 2em;
     }
 
     p {
       font-weight: lighter;
-      font-size: 16px;
+      // font-size: 16px;
+      font-family: 'Square Peg';
+      font-size: 2em;
+      margin: 0.3em auto;
     }
   }
 }
