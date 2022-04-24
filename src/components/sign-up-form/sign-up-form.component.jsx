@@ -9,6 +9,8 @@ import FormInput from '../form-input/form-input.component';
 import './sign-up-form.styles.scss';
 import Button from '../buttons/buttons.component';
 
+// import { UserContext } from '../../contexts/user.context';
+
 const deafultFormFields = {
   displayName: '',
   email: '',
@@ -20,6 +22,8 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(deafultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
+  // const { setCurrentUser } = useContext(UserContext);
+
   const resetFormFields = () => {
     setFormFields(deafultFormFields);
   };
@@ -29,7 +33,6 @@ const SignUpForm = () => {
 
     // check pass & confirmPass are same
     if (password !== confirmPassword) {
-      console.log('asshole');
       alert('Passwords Do Not Match');
       return;
     }
@@ -40,6 +43,8 @@ const SignUpForm = () => {
         email,
         password
       );
+
+      // setCurrentUser(user);
 
       //create user Document
       await createUserDocumentFromAuth(user, {
