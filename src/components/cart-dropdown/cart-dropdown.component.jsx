@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Button from '../buttons/buttons.component';
 import CartItem from '../cart-item/cart-item.component';
 
