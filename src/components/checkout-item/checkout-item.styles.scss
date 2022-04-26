@@ -1,0 +1,34 @@
+.checkout-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 0;
+  img {
+    width: 15%;
+  }
+}
+
+.checkout-item-name {
+  width: 20%;
+}
+
+.checkout-decrease,
+.checkout-increase,
+.checkout-remove,
+.checkout-item-price,
+.checkout-item-quantity {
+  font-size: 30px;
+}
+
+.checkout-decrease,
+.checkout-increase,
+.checkout-remove {
+  cursor: pointer;
+}
+.bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,11 @@
+.checkout {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+  &-headings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
