@@ -8,13 +8,8 @@ import { CartContext } from '../../contexts/cart.context';
 import './cart-dropdown.styles.scss';
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartTotal } = useContext(CartContext);
   const navigate = useNavigate();
-  let total = 0;
-  cartItems.map((item) => {
-    console.log(`Total: ${total}`);
-    total += parseInt(item.price) * parseInt(item.quantity);
-  });
 
   const goToCheckoutHandler = () => {
     navigate('/checkout');
@@ -26,7 +21,7 @@ const CartDropdown = () => {
           <CartItem cartItem={item} key={item.id} />
         ))}
       </div>
-      <h2 className='total'>Total: ${total}</h2>
+      <h2 className='total'>Total: ${cartTotal}</h2>
       <Button onClick={goToCheckoutHandler}>Go To Checkout</Button>
     </div>
   );

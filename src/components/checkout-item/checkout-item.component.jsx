@@ -9,11 +9,11 @@ const CheckoutItem = ({ cartItem }) => {
   const { addItemToCart, decrementItem, removeItemFromCart } =
     useContext(CartContext);
 
+  //handlers
   const addItemHandler = () => addItemToCart(cartItem);
   const decrementHandler = () => decrementItem(cartItem);
   const removeItemHandler = () => removeItemFromCart(cartItem);
 
-  console.log(cartItem);
   return (
     <Fragment>
       <div className='checkout-item-container'>
@@ -21,16 +21,17 @@ const CheckoutItem = ({ cartItem }) => {
         <h2 className='checkout-item-name'>{name}</h2>
         <span className='checkout-item-quantity'>
           <span className='checkout-decrease' onClick={decrementHandler}>
-            <b> - </b>{' '}
-          </span>{' '}
-          {quantity}
+            -
+          </span>
+          <span className='quantity'>{quantity}</span>
+
           <span className='checkout-increase' onClick={addItemHandler}>
-            <b> + </b>
-          </span>{' '}
+            +
+          </span>
         </span>
         <span className='checkout-item-price'>${price * quantity}</span>
         <span className='checkout-remove' onClick={removeItemHandler}>
-          &#10005;{' '}
+          &#10005;
         </span>
       </div>
       <hr />

@@ -9,13 +9,12 @@ import { CartContext } from '../../contexts/cart.context';
 import './checkout.styles.scss';
 
 const Checkout = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, cartTotal } = useContext(CartContext);
   const navigate = useNavigate();
-  let total = 0;
-  cartItems.map((item) => {
-    console.log(`Total: ${total}`);
-    total += parseInt(item.price) * parseInt(item.quantity);
-  });
+  // let total = 0;
+  // cartItems.map((item) => {
+  //   total += parseInt(item.price) * parseInt(item.quantity);
+  // });
 
   const goToPayment = () => {
     navigate('/checkout');
@@ -38,7 +37,7 @@ const Checkout = () => {
       </div>
       <div className='bottom'>
         <Button onClick={goToPayment}>Checkout</Button>
-        <h2 className='cart-total'>Total: ${total}</h2>
+        <h2 className='cart-total'>Total: ${cartTotal}</h2>
       </div>
     </div>
   );

@@ -25,10 +25,14 @@
 .checkout-increase,
 .checkout-remove {
   cursor: pointer;
+  font-weight: 900;
 }
 .bottom {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.quantity {
+  margin: 0 0.5em;
 }
