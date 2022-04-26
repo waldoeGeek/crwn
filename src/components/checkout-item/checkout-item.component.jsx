@@ -8,6 +8,11 @@ const CheckoutItem = ({ cartItem }) => {
   const { name, quantity, imageUrl, price } = cartItem;
   const { addItemToCart, decrementItem, removeItemFromCart } =
     useContext(CartContext);
+
+  const addItemHandler = () => addItemToCart(cartItem);
+  const decrementHandler = () => decrementItem(cartItem);
+  const removeItemHandler = () => removeItemFromCart(cartItem);
+
   console.log(cartItem);
   return (
     <Fragment>
@@ -15,25 +20,16 @@ const CheckoutItem = ({ cartItem }) => {
         <img src={imageUrl} alt={name} className='checkout-img' />
         <h2 className='checkout-item-name'>{name}</h2>
         <span className='checkout-item-quantity'>
-          <span
-            className='checkout-decrease'
-            onClick={() => decrementItem(cartItem)}
-          >
+          <span className='checkout-decrease' onClick={decrementHandler}>
             <b> - </b>{' '}
           </span>{' '}
           {quantity}
-          <span
-            className='checkout-increase'
-            onClick={() => addItemToCart(cartItem)}
-          >
+          <span className='checkout-increase' onClick={addItemHandler}>
             <b> + </b>
           </span>{' '}
         </span>
         <span className='checkout-item-price'>${price * quantity}</span>
-        <span
-          className='checkout-remove'
-          onClick={() => removeItemFromCart(cartItem)}
-        >
+        <span className='checkout-remove' onClick={removeItemHandler}>
           &#10005;{' '}
         </span>
       </div>

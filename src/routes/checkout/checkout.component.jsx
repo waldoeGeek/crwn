@@ -12,7 +12,7 @@ const Checkout = () => {
   const { cartItems } = useContext(CartContext);
   const navigate = useNavigate();
   let total = 0;
-  let cartTotal = cartItems.map((item) => {
+  cartItems.map((item) => {
     console.log(`Total: ${total}`);
     total += parseInt(item.price) * parseInt(item.quantity);
   });
@@ -23,13 +23,13 @@ const Checkout = () => {
   return (
     <div className='checkout'>
       <h1 className='checkout-header'>Checkout</h1>
-      <div className='checkout-headings'>
+      {/*<div className='checkout-headings'>
         <span className='checkout-title'>Product</span>
         <span className='checkout-title'>Description</span>
         <span className='checkout-title'>Quantity</span>
         <span className='checkout-title'>Price</span>
         <span className='checkout-title'>Remove</span>
-      </div>
+  </div>*/}
       <hr />
       <div className='checkout-items'>
         {cartItems.map((item) => (
