@@ -5,7 +5,35 @@
 }
 
 .category__title {
-  font-size: 4em;
   text-align: center;
   align-self: center;
+
+  h2 {
+    font-size: 4em;
+    margin-bottom: 0;
+  }
+  hr {
+    width: 90%;
+  }
+}
+
+.category__links {
+  display: flex;
+  font-size: 1em;
+  flex-direction: row;
+  justify-content: center;
+
+  h3 {
+    margin: 0 auto;
+    padding: 0 0.4em;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
