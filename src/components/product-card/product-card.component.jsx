@@ -14,9 +14,14 @@ const ProductCard = ({ product }) => {
   const addProductToCart = () => {
     addItemToCart(product);
   };
+  const random = 1 + Math.random();
+  console.log(`random: ${random}`);
 
   return (
-    <div className='product-card-container'>
+    <div
+      className='product-card-container'
+      // style={{ animation: `fade ${random}s ease-in-out` }}
+    >
       <img src={imageUrl} alt={`${name}`} className='product-image' />
       <div className='footer'>
         <span className='name'>{name}</span>
