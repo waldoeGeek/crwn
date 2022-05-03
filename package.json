@@ -14,6 +14,7 @@
     "ruby-sass": "^0.0.3",
     "sass": "^1.50.0",
     "sass-loader": "^12.6.0",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

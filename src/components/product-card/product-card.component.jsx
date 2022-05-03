@@ -2,10 +2,17 @@ import { useContext } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import Button from '../buttons/buttons.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../buttons/buttons.component';
 // import { ProductsContext } from '../../contexts/product.context';
 
-import './product-card.styles.scss';
+import {
+  ProductCardContainer,
+  ProductImage,
+  ProductButton,
+  Footer,
+  FooterName,
+  FooterPrice,
+} from './product-card.styles.jsx';
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
@@ -15,22 +22,20 @@ const ProductCard = ({ product }) => {
     addItemToCart(product);
   };
   const random = 1 + Math.random();
-  console.log(`random: ${random}`);
 
   return (
-    <div
-      className='product-card-container'
-      // style={{ animation: `fade ${random}s ease-in-out` }}
+    <ProductCardContainer
+    // style={{ animation: `fade ${random}s ease-in-out` }}
     >
-      <img src={imageUrl} alt={`${name}`} className='product-image' />
-      <div className='footer'>
-        <span className='name'>{name}</span>
-        <span className='price'>${price}</span>
-      </div>
-      <Button buttonType='inverted' onClick={addProductToCart}>
+      <ProductImage src={imageUrl} alt={`${name}`} />
+      <Footer>
+        <FooterName>{name}</FooterName>
+        <FooterPrice>${price}</FooterPrice>
+      </Footer>
+      <ProductButton buttonType='inverted' onClick={addProductToCart}>
         Add To Cart
-      </Button>
-    </div>
+      </ProductButton>
+    </ProductCardContainer>
   );
 };
 

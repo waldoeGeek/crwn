@@ -8,10 +8,13 @@ import {
 
 import FormInput from '../form-input/form-input.component';
 
-// import { UserContext } from '../../contexts/user.context';
+import {
+  SignInContainer,
+  SignInHeading,
+  ButtonContainer,
+} from './sign-in-form.styles.jsx';
 
-import './sign-in-form.styles.scss';
-import Button from '../buttons/buttons.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../buttons/buttons.component';
 
 const deafultFormFields = {
   email: '',
@@ -64,8 +67,8 @@ const SignInForm = () => {
   };
 
   return (
-    <div className='sign-up-container'>
-      <h2>Already have an account?</h2>
+    <SignInContainer>
+      <SignInHeading>Already have an account?</SignInHeading>
       <span>Sign In</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -90,23 +93,21 @@ const SignInForm = () => {
           id='password'
         />
 
-        <div className='buttons-container'>
-          <Button value='Sign Up' buttonType=''>
-            Sign In
-          </Button>
+        <ButtonContainer>
+          <Button type='submit'>Sign In</Button>
           <Button
             value='Sign Up'
             type='button'
-            buttonType='google'
+            buttonType={BUTTON_TYPE_CLASSES.google}
             onClick={signInWithGoogle}
           >
-            Google Sign In
+            Google
           </Button>
-        </div>
+        </ButtonContainer>
 
         {/*<button type='submit'>Sign Up</button>*/}
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 

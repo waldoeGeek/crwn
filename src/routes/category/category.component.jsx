@@ -6,7 +6,13 @@ import ProductCard from '../../components/product-card/product-card.component';
 import { CategoriesContext } from '../../contexts/categories.context';
 import GetCategoryLinks from '../../components/get-category-links/get-category-links.component';
 
-import './category.styles.scss';
+import {
+  CategoryContainer,
+  CategoryHR,
+  CategoryHeading,
+  CategoryLinks,
+  CategoryTitle,
+} from './category.styles.jsx';
 
 const Category = () => {
   const { category } = useParams();
@@ -18,19 +24,19 @@ const Category = () => {
   }, [category, categoriesMap]);
 
   return (
-    <div className='category-container'>
-      <div className='category__title'>
-        <h2>{category}</h2>
-        <hr />
-        <div className='category__links'>
+    <CategoryContainer>
+      <CategoryTitle>
+        <CategoryHeading>{category}</CategoryHeading>
+        <CategoryHR />
+        <CategoryLinks>
           <GetCategoryLinks category={category} />
-        </div>
-      </div>
+        </CategoryLinks>
+      </CategoryTitle>
       {products &&
         products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
-    </div>
+    </CategoryContainer>
   );
 };
 

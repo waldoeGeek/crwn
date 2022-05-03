@@ -6,8 +6,8 @@ import {
 
 import FormInput from '../form-input/form-input.component';
 
-import './sign-up-form.styles.scss';
-import Button from '../buttons/buttons.component';
+import { SignUpContainer, SignUpHeading } from './sign-up-form.styles.jsx';
+import Button, { BUTTON_TYPE_CLASSES } from '../buttons/buttons.component';
 
 // import { UserContext } from '../../contexts/user.context';
 
@@ -66,8 +66,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className='sign-up-container'>
-      <h2>Don't Have an Account?</h2>
+    <SignUpContainer>
+      <SignUpHeading>Don't Have an Account?</SignUpHeading>
       <span>Sign up with your Email</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -113,12 +113,12 @@ const SignUpForm = () => {
           value={confirmPassword}
           id='confirmPassword'
         />
-        <Button value='Sign Up' buttonType=''>
+        <Button value='Sign Up' buttonType={BUTTON_TYPE_CLASSES.inverted}>
           Sign Up
         </Button>
         {/*<button type='submit'>Sign Up</button>*/}
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 

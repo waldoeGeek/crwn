@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Fragment } from 'react';
 
+import { LinksHeadingThree } from './get-category-links.styles';
+
 const catLinks = (category) => {
   if (category === 'hats') {
     return ['jackets', 'sneakers', 'womens', 'mens'];
@@ -24,13 +26,13 @@ const GetCategoryLinks = ({ category }) => {
         return (
           <Link to={`/shop/${item}`}>
             <Fragment key={Math.random()}>
-              <h3
+              <LinksHeadingThree
                 style={{
                   animation: `fade 1.${idx}s ease-in-out`,
                 }}
               >
                 {item}
-              </h3>
+              </LinksHeadingThree>
             </Fragment>
           </Link>
         );

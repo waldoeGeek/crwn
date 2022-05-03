@@ -1,8 +1,8 @@
-import { useContext, Fragment } from 'react';
+// import { useContext, Fragment } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import ProductCard from '../../components/product-card/product-card.component';
 
-import { CategoriesContext } from '../../contexts/categories.context';
+// import { CategoriesContext } from '../../contexts/categories.context';
 
 import CategoriesPreview from '../categories-preview/categories-preview.component';
 import Category from '../category/category.component';

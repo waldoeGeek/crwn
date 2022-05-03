@@ -4,3 +4,12 @@
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 3em 1em;
 }
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
