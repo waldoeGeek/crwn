@@ -24,7 +24,7 @@ const GetCategoryLinks = ({ category }) => {
     <Fragment>
       {categoryLinks.map((item, idx) => {
         return (
-          <Link to={`/shop/${item}`}>
+          <Link to={`/shop/${item}`} key={Math.random()}>
             <Fragment key={Math.random()}>
               <LinksHeadingThree
                 style={{
